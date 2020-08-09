@@ -1,0 +1,17 @@
+.voucher-modal--main {
+  .modal-wrapper {
+    height: 100vh;
+    width: 100vw;
+
+    ul {
+      padding-left: 30px;
+
+      >li {
+        color: #795040;
+        font-weight: 500;
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

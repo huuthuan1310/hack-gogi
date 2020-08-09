@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Nhập thông tin</ion-title>
+  </ion-toolbar>
+</ion-header>
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm)">
+  <ion-list lines="inset">
+    <ion-item>
+      <ion-button expand="block" type="submit" class="ion-no-margin" (click)="generate()">Tự điền thông tin
+      </ion-button>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Họ và tên <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <ion-input type="text" formControlName="name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Số điện thoại <ion-text color="danger">*</ion-text>
+      </ion-label>
+
+      <!-- Partern vietnamese phone -->
+      <!-- <ion-input type="tel" formControlName="phone" pattern="(03|07|08|09|01[2|6|8|9])+([0-9]{8})\b"></ion-input> -->
+
+      <ion-input type="tel" formControlName="phone" pattern="^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Email <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <ion-input type="email" formControlName="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Tỉnh/thành phố</ion-label>
+      <ion-select interface="action-sheet" placeholder="Chọn" formControlName="area">
+        <ion-select-option *ngFor="let item of citiesArr" value="{{item.name}}">{{item.name}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Loại voucher</ion-label>
+      <ion-select interface="action-sheet" placeholder="Chọn" formControlName="reward">
+        <ion-select-option *ngFor="let item of vouchers" value="{{item.value}}">{{item.value}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <div class="ion-padding">
+    <ion-button color="success" expand="block" type="submit" class="ion-no-margin" [disabled]="!checkoutForm.valid">
+      Lấy voucher
+    </ion-button>
+  </div>
+</form>

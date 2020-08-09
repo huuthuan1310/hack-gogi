@@ -1,0 +1,22 @@
+<div class="backdrop"></div>
+<div class="content">
+  <div class="header">
+    <img src="../../../../assets/img/title-co-ngay-ma.png" alt="">
+    <ion-icon class="close" name="close-outline" (click)="dismiss()"></ion-icon>
+  </div>
+  <div class="body">
+    <div class="code-line">
+      <div class="text">Mã ưu đãi</div>
+      <div class="code">{{code}}</div>
+    </div>
+    <hr />
+    <div class="description">Chụp màn hình để lưu mã ưu đãi</div>
+    <div class="rule">
+      <div class="rule-header">
+        Điều kiện áp dụng:
+      </div>
+      <ul [innerHTML]="rule"></ul>
+    </div>
+    <img class="milionare" src="../../../../assets/img/btn-con-1-ty.png" alt="">
+  </div>
+</div>
