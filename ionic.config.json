@@ -1,0 +1,7 @@
+{
+  "name": "gogi",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

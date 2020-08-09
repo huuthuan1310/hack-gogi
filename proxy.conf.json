@@ -1,0 +1,18 @@
+{
+  "/getCookies": {
+    "target": "https://trung1ty.gogi.com.vn/san-thuong",
+    "secure": false,
+    "pathRewrite": {
+      "^/getCookies": ""
+    },
+    "changeOrigin": true
+  },
+  "/getVoucher": {
+    "target": "https://trung1ty.gogi.com.vn/customer/register",
+    "secure": false,
+    "pathRewrite": {
+      "^/getVoucher": ""
+    },
+    "changeOrigin": true
+  }
+}
